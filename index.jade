@@ -29,6 +29,26 @@ html
 			}
 		
 			ko.applyBindings( model );
+
+			var items = $(".content").each( function( index, item ){
+				item.parent = $( item ).parent().get(0);
+			} ).detach();
+
+			//keep detaching and reattaching
+			var attached = false;
+			setInterval( function(){
+				attached = !attached;
+
+				if( attached ){
+					items.each( function( index, item ){
+						$( item.parent ).append( item );
+					} );
+					console.log($(".content").length);
+				}else{
+					$(".content").detach();
+				}
+
+			}, 5000 );
 		});
 		
 		function AppModel(){
@@ -63,12 +83,18 @@ html
 			border-bottom: 1px solid black;
 			margin-bottom: 20px;
 		}
+
+		.content{
+			position: relative;
+		}
 		
 		li img{
 			max-width: 1080px;
 			max-height: 520px;
-			
-			display: none;
+
+			position: absolute;
+			top: 0px;
+			left: 0px;
 		}
 	
 	body
@@ -76,4 +102,4 @@ html
 		.counter
 		.scroll-pane
 			ul(data-bind="foreach:items")
-				li: img(data-bind="attr:{src:image}" )
+				li: .content: img(data-bind="attr:{src:image}" )
