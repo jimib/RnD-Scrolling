@@ -1,0 +1,34 @@
+!node_modules
+routes.txt
+export.zip
+node_modules/*
+*.pdf
+libs/receipt/output/*.png
+libs/receipt/output/*.pdf
+libs/receipt/output/*.html
+!libs/receipt/output/test.pdf
+log/*.txt
+*.log
+test.js
+
+# Compiled Object files
+vs/**/*.slo
+vs/**/*.lo
+vs/**/*.o
+vs/**/*.obj
+
+# Precompiled Headers
+vs/**/*.gch
+vs/**/*.pch
+
+# Fortran module files
+vs/**/*.mod
+
+# Executables
+vs/**/*.exe
+vs/**/*.out
+vs/**/*.app
+
+#log files
+vs/**/*.tlog
+CSharpApp/PrintReceipt/bin/Debug/PrintReceipt.vshost.exe

@@ -25,14 +25,24 @@ html
 		updateFrameRate();
 		
 	style.
+		body{
+			margin:0px;
+			padding: 0px;
+		}
 		.scroll-pane{
-			width: 1000px;
-			height: 1000px;
+			width: 1080px;
+			height: 1920px;
 			
 			background-color: #f00;
 			
 			overflow: hidden;
 			overflow-y: scroll;
+		}
+
+		ul, li{
+			list-style: none;
+			margin:0px;
+			padding: 0px;
 		}
 	
 	body
@@ -40,5 +50,5 @@ html
 		.counter
 		.scroll-pane
 			ul
-				- for( var i = 0; i < 10000; i++ )
+				- for( var i = 0; i < 100000; i++ )
 					li: img(src="image" + ((i % 4) + 1) + ".jpg" )
